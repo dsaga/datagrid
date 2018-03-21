@@ -29,7 +29,7 @@ Require package at your composer.json file like so
 ```json
 {
     "require": {
-        "aginev/datagrid": "1.0.*"
+        "dsaga/datagrid": "1.0.*"
     }
 }
 ```
@@ -41,7 +41,7 @@ composer update
 
 Or in terminal
 ```sh
-composer require aginev/datagrid:1.0.*
+composer require dsaga/datagrid:1.0.*
 ```
 
 Add Service Provider to your config/app.php like so
@@ -165,7 +165,7 @@ Lets show the grid in the view. grid-table param is not required and it's the id
 
 ### Modifying default view
 
-The most stupid thing is to go at vendor/aginev/datagrid/src/Views and to edit grid.blade.php. Doing so after a package update all your changes will be overwrited!
+The most stupid thing is to go at vendor/dsaga/datagrid/src/Views and to edit grid.blade.php. Doing so after a package update all your changes will be overwrited!
 
 Much better way is to publish the view to your project like so:
 

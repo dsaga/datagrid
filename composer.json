@@ -1,8 +1,8 @@
 {
-    "name": "aginev/datagrid",
+    "name": "dsaga/datagrid",
     "description": "Datagrid package for Laravel v5",
 	"keywords": ["Datagrid", "Datagrid Package for Laravel v5"],
-    "homepage": "http://aginev.com",
+    "homepage": "http://dsaga.com",
     "license": "MIT",
     "authors": [
         {
