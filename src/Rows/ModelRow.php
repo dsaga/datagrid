@@ -29,4 +29,8 @@ class ModelRow extends Row {
 
 		return $this;
 	}
+
+	public function getModel() {
+			return $this->getData();
+	}
 }
