@@ -468,15 +468,17 @@ class Column {
 						// Remove duplicate values
 						$values = array_unique($values);
 
-						$this->attributes[$key] = $values + $this->attributes[$key];
+						$this->attributes[$key] = $values + (is_array($this->attributes[$key]) && !empty($this->attributes[$key]) ? $this->attributes[$key] : []);
 
 				}
 
 				return $this;
 		}
 
-    public function getAttributesHtml() {
+    public function getAttributesHtml($additional) {
         $html = '';
+
+				$this->setAttributes($additional);
 
         foreach ($this->getAttributes() as $attribute => $values) {
             $html .= $attribute . '="' . join(' ', $values) . '" ';
