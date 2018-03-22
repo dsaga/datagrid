@@ -84,7 +84,9 @@ class Column {
      *
      * @var array
      */
-    private $attributes = [];
+    private $attributes = [
+			"class" => [ "col" ]
+		];
 
 	/**
 	 * Instance Column
@@ -468,14 +470,14 @@ class Column {
 						// Remove duplicate values
 						$values = array_unique($values);
 
-						$this->attributes[$key] = $values + (is_array($this->attributes[$key]) && !empty($this->attributes[$key]) ? $this->attributes[$key] : []);
+						$this->attributes[$key] =  (!empty($this->attributes[$key]) && is_array($this->attributes[$key]) ? array_merge($this->attributes[$key],$values) : $values);
 
 				}
 
 				return $this;
 		}
 
-    public function getAttributesHtml($additional) {
+    public function getAttributesHtml($additional = []) {
         $html = '';
 
 				$this->setAttributes($additional);
