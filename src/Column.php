@@ -306,7 +306,7 @@ class Column {
 		if ($filters instanceof Collection) {
 			$filters = $filters->toArray();
 		}
-		
+
 		$this->filters = $filters;
 
 		return $this;
@@ -451,28 +451,29 @@ class Column {
         return $this->attributes;
     }
 
-    /**
-     * @param $attributes
-     *
-     * @return $this
-     */
-    public function setAttributes($attributes)
-    {
-        foreach ($attributes as $key => $string_values) {
-            $values = explode(' ', $string_values);
+		/**
+		 * @param $attributes
+		 *
+		 * @return $this
+		 */
+		public function setAttributes($attributes)
+		{
+				foreach ($attributes as $key => $string_values) {
+						$values = explode(' ', $string_values);
 
-            // Trim the values
-            $values = array_map('trim', $values);
-            // Remove empty elements
-            $values = array_filter($values);
-            // Remove duplicate values
-            $values = array_unique($values);
+						// Trim the values
+						$values = array_map('trim', $values);
+						// Remove empty elements
+						$values = array_filter($values);
+						// Remove duplicate values
+						$values = array_unique($values);
 
-            $this->attributes[$key] = $values;
-        }
+						$this->attributes[$key] = $values + $this->attributes[$key];
 
-        return $this;
-    }
+				}
+
+				return $this;
+		}
 
     public function getAttributesHtml() {
         $html = '';
