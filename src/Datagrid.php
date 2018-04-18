@@ -334,7 +334,7 @@ class Datagrid {
 		}
 
 		if (!$filters->has('order_dir')) {
-			$filters->put('order_dir', 'ASC');
+			$filters->put('order_dir', 'DESC');
 		}
 
 		if ($filters['order_by'] == $field) {
@@ -345,7 +345,7 @@ class Datagrid {
 			}
 		} else {
 			$filters->put('order_by', $field);
-			$filters->put('order_dir', 'ASC');
+			$filters->put('order_dir', 'DESC');
 		}
 
 		$per_page = intval(\Illuminate\Support\Facades\Request::get('per_page', \Config::get('pagination.per_page')));
