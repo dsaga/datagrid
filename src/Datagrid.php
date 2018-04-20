@@ -349,9 +349,10 @@ class Datagrid {
 		}
 
 		$per_page = intval(\Illuminate\Support\Facades\Request::get('per_page', \Config::get('pagination.per_page')));
+		$_page = intval(\Illuminate\Support\Facades\Request::get('page', 1));
         	$per_page = $per_page > 0 ? $per_page : \Config::get('pagination.per_page');
 
-		return ['f' => $filters->toArray(), 'page' => 1, 'per_page' => $per_page];
+		return ['f' => $filters->toArray(), 'page' => $_page, 'per_page' => $per_page];
 	}
 
 	/**
@@ -366,9 +367,10 @@ class Datagrid {
 		$filters = clone $this->getFilters(false);
 
 		$per_page = intval(\Illuminate\Support\Facades\Request::get('per_page', \Config::get('pagination.per_page')));
+		$_page = intval(\Illuminate\Support\Facades\Request::get('page', 1));
 					$per_page = $per_page > 0 ? $per_page : \Config::get('pagination.per_page');
 
-		return ['f' => $filters->toArray(), 'page' => 1, 'per_page' => $per_page];
+		return ['f' => $filters->toArray(), 'page' => $_page, 'per_page' => $per_page];
 
 	}
 
