@@ -85,7 +85,7 @@ class Column {
      * @var array
      */
     private $attributes = [
-			"class" => [ "col" ]
+			"class" => [ "table-col" ]
 		];
 
 	/**
